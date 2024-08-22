@@ -17,13 +17,78 @@ To write a program to predict the marks scored by a student using the simple lin
 ```
 /*
 Program to implement the simple linear regression model for predicting the marks scored.
-Developed by: 
-RegisterNumber:  
+Developed by: TIMMMAPURAM YOGEESWAR
+RegisterNumber:212223230233
 */
+```
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_absolute_error,mean_squared_error
+df=pd.read_csv('student_scores.csv')
+df.head()
+df.tail()
+x = df.iloc[:,:-1].values
+x
+y = df.iloc[:,1].values
+y
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=1/3,random_state=0)
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(x_train,y_train)
+y_pred = regressor.predict(x_test)
+y_pred
+y_test
+#Graph plot for training data
+plt.scatter(x_train,y_train,color='black')
+plt.plot(x_train,regressor.predict(x_train),color='purple')
+plt.title("Hours vs Scores(Training set)")
+plt.xlabel("Hours")
+plt.ylabel("Scores")
+plt.show()
+#Graph plot for test data
+plt.scatter(x_test,y_test,color='red')
+plt.plot(x_train,regressor.predict(x_train),color='blue')
+plt.title("Hours vs Scores(Testing set)")
+plt.xlabel("Hours")
+plt.ylabel("Scores")
+plt.show()
+mse=mean_absolute_error(y_test,y_pred)
+print('MSE = ',mse)
+mae=mean_absolute_error(y_test,y_pred)
+print('MAE = ',mae)
+rmse=np.sqrt(mse)
+print("RMSE= ",rmse)
 ```
 
 ## Output:
-![simple linear regression model for predicting the marks scored](sam.png)
+df.head()
+![image](https://github.com/user-attachments/assets/eb6ca366-c27f-4aa5-ac8b-e9c5823a92fd)
+df.tail()
+![image](https://github.com/user-attachments/assets/de78092d-6d58-4b97-bdcf-32d95f106ef5)
+df.tail()
+![image](https://github.com/user-attachments/assets/1623fee0-1720-4d76-a34b-7e347021c9bf)
+Array value of Y
+![image](https://github.com/user-attachments/assets/dd9adef1-b881-4e9c-896a-5835265ee5f4)
+Values of Y prediction
+![image](https://github.com/user-attachments/assets/232cc41f-2bfe-4f82-9b0b-0cf1378e3b43)
+Array values of Y test
+![image](https://github.com/user-attachments/assets/98fc6e04-f33f-4ea5-85b1-ae3cf61b54fc)
+Training Set Graph
+![image](https://github.com/user-attachments/assets/da44925d-350f-4cc4-84b9-107448024fe2)
+Test Set Graph
+![image](https://github.com/user-attachments/assets/d131086b-1cb1-41df-bd01-921852080332)
+Values of MSE, MAE and RMSE
+![image](https://github.com/user-attachments/assets/f157789c-109e-4770-9e73-7b59f9bd39d4)
+
+
+
+
+
+
+
 
 
 ## Result:
