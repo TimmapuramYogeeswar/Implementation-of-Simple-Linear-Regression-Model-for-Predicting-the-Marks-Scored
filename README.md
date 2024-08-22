@@ -8,10 +8,17 @@ To write a program to predict the marks scored by a student using the simple lin
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+1.Import the standard Libraries.
+
+2.Set variables for assigning dataset values.
+
+3.Import linear regression from sklearn.
+
+4.Assign the points for representing in the graph.
+
+5.Predict the regression for marks by using the representation of the graph.
+
+6.Compare the graphs and hence we obtained the linear regression for the given datas.
 
 ## Program:
 ```
@@ -65,22 +72,39 @@ print("RMSE= ",rmse)
 
 ## Output:
 df.head()
+
 ![image](https://github.com/user-attachments/assets/eb6ca366-c27f-4aa5-ac8b-e9c5823a92fd)
+
 df.tail()
+
 ![image](https://github.com/user-attachments/assets/de78092d-6d58-4b97-bdcf-32d95f106ef5)
+
 df.tail()
+
 ![image](https://github.com/user-attachments/assets/1623fee0-1720-4d76-a34b-7e347021c9bf)
+
 Array value of Y
+
 ![image](https://github.com/user-attachments/assets/dd9adef1-b881-4e9c-896a-5835265ee5f4)
+
 Values of Y prediction
+
 ![image](https://github.com/user-attachments/assets/232cc41f-2bfe-4f82-9b0b-0cf1378e3b43)
+
 Array values of Y test
+
 ![image](https://github.com/user-attachments/assets/98fc6e04-f33f-4ea5-85b1-ae3cf61b54fc)
+
 Training Set Graph
+
 ![image](https://github.com/user-attachments/assets/da44925d-350f-4cc4-84b9-107448024fe2)
+
 Test Set Graph
+
 ![image](https://github.com/user-attachments/assets/d131086b-1cb1-41df-bd01-921852080332)
+
 Values of MSE, MAE and RMSE
+
 ![image](https://github.com/user-attachments/assets/f157789c-109e-4770-9e73-7b59f9bd39d4)
 
 
